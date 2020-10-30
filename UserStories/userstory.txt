@@ -1,0 +1,22 @@
+#10 As a user, I can save all changes.
+
+    a) Description:
+        A modler program user can save all changes between executions.
+        The user can direct the modler program to load from that save file.
+    b) Tasks:
+        As a modler program user, I can manually save current changes to a file from a prompt. 
+        As a modler program user, I can load previously saved changes to a file from a prompt.
+    c) Tests:
+        Verify that program user can manually save current changes to a file.
+        Verfiy that program user can manually load previous changes from a file.
+        Verify program asks user to save before quiting.
+        Verify program asks user to load from a file when starting. 
+    d) Assignee:
+
+    e) Estimation: 30
+    f) Priority: 10
+    g) Done:
+        User is able to select a save option while program is running.
+        User is able to load from a save file while program is running.
+        Program asks user to save before quiting.
+        Program asks user to load from a file when starting.
