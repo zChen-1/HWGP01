@@ -29,6 +29,34 @@
 	    User is able to select separate properties for Text type.
 	    User is able to view each unique ID.
         
+#5 As an administrator, I can move shapes being rendered.
+	a) Description:
+		An administrator can fill out a form to choose how to move a shape.
+		Only administrators can move shapes.
+		Changes to shapes are visible in the rendering area.
+
+	b) Tasks:
+		An administrator should be able to move shapes.
+		Non-administrator users should not be able to move shapes.
+		Changes should be visible to the user.
+
+	c) Tests:
+		Verify that administrators can move shapes
+		Verify that non-administrators cannot move shapes.
+		Verify that changes to shapes are reflected in the rendering area.
+
+	d) Assignee:
+
+	e) Estimation: 10
+	
+	f) Priority: 
+
+	g) Done:
+		Administrator is able to move shapes using a form.
+		Program verifies that user is an administrator, does not allow shapes to be moved if not.
+		User should be warned before moving shapes.
+		Shape translations should be visible to the user post operation.
+
 #10 As a user, I can save all changes.
 
     a) Description:
