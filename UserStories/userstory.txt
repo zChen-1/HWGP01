@@ -27,6 +27,7 @@
 	    User is able to access shape file.
 	    User is able to select shape types/properties
 	    User is able to select separate properties for Text type.
+	    User is able to view each unique ID.
         
 #10 As a user, I can save all changes.
 
