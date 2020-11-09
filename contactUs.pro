@@ -13,7 +13,8 @@ SOURCES += \
     contactUs.cpp
 
 HEADERS += \
-    contactUs.h
+    contactUs.h \
+    vector.h
 
 FORMS += \
     contactUs.ui
