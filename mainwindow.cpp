@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "contactus.h"
+#include "login.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,4 +21,11 @@ void MainWindow::on_actionContact_Us_triggered()
     cWindow = new ContactUs(this);
     cWindow->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint & ~Qt::WindowMinMaxButtonsHint);
     cWindow->show();
+}
+
+void MainWindow::on_actionLogin_triggered()
+{
+    lWindow = new login(this);
+    lWindow->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint & ~Qt::WindowMinMaxButtonsHint);
+    lWindow->show();
 }

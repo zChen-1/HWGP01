@@ -29,6 +29,7 @@
     </property>
     <addaction name="actionLogin"/>
     <addaction name="actionLog_Out"/>
+    <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -53,6 +54,11 @@
   <action name="actionContact_Us">
    <property name="text">
     <string>Contact Us</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
    </property>
   </action>
  </widget>

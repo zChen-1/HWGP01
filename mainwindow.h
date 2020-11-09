@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "contactus.h"
+#include "login.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,8 +20,11 @@ public:
 private slots:
     void on_actionContact_Us_triggered();
 
+    void on_actionLogin_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactUs *cWindow;
+    login *lWindow;
 };
 #endif // MAINWINDOW_H
