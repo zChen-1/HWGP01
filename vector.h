@@ -1,5 +1,5 @@
 /*
- * vector.h 
+ * vector.h
  * by Ethan Lew
  */
 
@@ -34,7 +34,7 @@ namespace gp{
             for(int i = 0; i < size_v; i++){
                 elem[i] = oldVec.elem[i];
             }
-			
+
         };
 
         // Copy Assignment (NOT Constructor)
@@ -63,7 +63,7 @@ namespace gp{
         // Copies from a temporary obj, temp obj is destroyed after
         // Shallow copy temp obj into new obj
         vector(const vector&& temp): size_v{temp.size_v}, space{temp.space}, elem{temp.elem} {
-            
+
             // empty out temp value (is this necessary?)
             temp.size = 0;
             temp.capacity = 0;
@@ -80,8 +80,8 @@ namespace gp{
 
             // shallow copy temp into existing obj
             elem = temp.elem;
-            size = temp.size;
-            capacity = temp.capacity;
+            size_v = temp.size_v;
+            space = temp.space;
 
             // empty out temp obj
             temp.elem = nullptr;
@@ -109,7 +109,7 @@ namespace gp{
         // capacity
         // returns space
         int capacity() const {return space;};
-        
+
         // resize
         // grows the vector
         // !! if T is a pointer, delete contents first !!
@@ -118,8 +118,8 @@ namespace gp{
             for (int i = size_v; i < newsize; ++i){
                 elem[i] = 0;
             }
-			
-		    size_v = newsize;
+
+            size_v = newsize;
         };
 
         // push_back
@@ -154,7 +154,7 @@ namespace gp{
             // update capacity
             space = newalloc;
         };
-        
+
         using iterator = T*;
         using const_iterator = const T*;
 
@@ -202,18 +202,18 @@ namespace gp{
         // insert
         // inserts a new element v before p
         iterator insert(iterator p, const T& v) {
-            
+
             // make room for new element of capacity of vector is too small
-            if(size_v == capacity) {
-                reserve(capacity+1);
+            if(size_v == space) {
+                reserve(space+1);
             }
 
             // move elements down to make room to insert
             for (iterator pos = end(); pos != p; --pos)
-			*pos  = *(pos - 1);
+            *pos  = *(pos - 1);
 
             // update size
-            ++size;
+            ++size_v;
 
             // insert new element
             *p = v;
@@ -221,26 +221,26 @@ namespace gp{
             return p;
 
         };
-        
+
         // erase
         // removes element pointed to by p
         // !! if p is a pointer, data pointed to must be deleted before erasing !!
         iterator erase(iterator p) {
-            
+
             // end is one past the last element, cannot be erased
-            if (p == end){
+            if (p == end()){
                 return p;
             }
 
             // start one after p and move all elements up, overwriting p
-            for(iterator pos = p + 1; pos != end; ++pos) {
+            for(iterator pos = p + 1; pos != end(); ++pos) {
                 *(pos-1) = *pos;
             }
 
             // update size
-            --size;
+            --size_v;
 
-        }; 
+        };
 
     }; // end class template vector
 
