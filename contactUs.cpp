@@ -6,7 +6,6 @@ ContactUs::ContactUs(QWidget *parent) :
     ui(new Ui::ContactUs)
 {
     ui->setupUi(this);
-    this->setWindowTitle("Contact Us");
 }
 
 ContactUs::~ContactUs()

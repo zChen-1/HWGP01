@@ -18,5 +18,6 @@ MainWindow::~MainWindow()
 void MainWindow::on_actionContact_Us_triggered()
 {
     cWindow = new ContactUs(this);
+    cWindow->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint & ~Qt::WindowMinMaxButtonsHint);
     cWindow->show();
 }
