@@ -21,7 +21,7 @@ namespace gp{
     public:
         // Default Constructor
         // Capacity of 1 element on initialization
-        vector(): size_v{0}, space{1}, elem{new T[space]} {};
+        vector(): size_v{0}, space{1}, elem{nullptr} {};
 
         // Alternate Constructor
         // Capacity of s elements on initialization
@@ -124,13 +124,15 @@ namespace gp{
 
         // push_back
         // adds an element to the vector
-        // if there is no room, resize the vector with an extra space
+        // if there is no room, double the size of the array
         void push_back(T val) {
-            if(size_v == space){
-                reserve(size_v+1);
-                size_v++;
-                elem[size_v] = val;
+			if(size_v == 0) {
+				reserve(8);
+			}else if(size_v == space){
+                reserve(size_v*2);
             }
+			elem[size_v] = val;
+			size_v++;
         };
 
         // reserve
@@ -138,7 +140,11 @@ namespace gp{
         // !! delete the contents first if T is a pointer type !!
         void reserve(int newalloc) {
             T* temp = new T[newalloc];
-
+			
+			if(newalloc <= space){
+				return;
+			}
+			
             // copy old array into new array
             for(int i = 0; i < size_v; ++i){
                 temp[i] = elem[i];
