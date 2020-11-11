@@ -1,5 +1,13 @@
 #include <iostream>
 #include <string>
+#include <QBrush>
+#include <QPainter>
+#include <QPen>
+#include <QPoint>
+#include <QFont>
+#include "math.h"
+
+using namespace Qt;
 using namespace std;
 
 #ifndef SHAPE_H
@@ -10,7 +18,7 @@ class Shape
 public:
     enum class ShapeType { NoShape, Line, Polyline, Polygon, Rectangle, Ellipse, Text };
 
-    Shape(QPaintDevice* device = nullptr, int id = -1, ShapeType shape = ShapeType::noShape);
+    Shape(QPaintDevice* device = nullptr, int id = -1, ShapeType shape = ShapeType::NoShape);
     virtual ~Shape() {}
 
     // add deleted copy operations
