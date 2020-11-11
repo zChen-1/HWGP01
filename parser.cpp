@@ -1,3 +1,5 @@
+// parser.cpp by Paul Jo
+
 #include "parser.h"
 #include <QColor>
 
