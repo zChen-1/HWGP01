@@ -1,3 +1,5 @@
+// contactUs.cpp by Paul Jo
+
 #include "contactus.h"
 #include "ui_contactus.h"
 
