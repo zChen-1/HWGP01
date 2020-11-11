@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include "vector.h"
-// Shape, Line, Circle... etc has to be done
+// Remove comments below once Shape, Line, Circle... etc is done (Shortcut is Ctrl + /).
 // #include "shape.h"
 // #include "line.h"
 // #include "circle.h"
