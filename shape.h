@@ -1,3 +1,6 @@
+#ifndef SHAPE_H
+#define SHAPE_H
+
 #include <iostream>
 #include <string>
 #include <QBrush>
@@ -9,9 +12,6 @@
 
 using namespace Qt;
 using namespace std;
-
-#ifndef SHAPE_H
-#define SHAPE_H
 
 class Shape
 {
