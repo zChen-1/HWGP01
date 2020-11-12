@@ -25,7 +25,7 @@ gp::vector<Shape*> ParseFile(int size){
 
         if (in.eof())
             break;
-
+// wouldnt a switch be better for this?
         if (id == 1){
             rShapes.push_back(readLine(in, id));
         }
