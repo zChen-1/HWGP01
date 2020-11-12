@@ -112,27 +112,27 @@ Shape* ReadText(ifstream& in, int id)
     return text;
 }
 
-QColor getColor(string color)
-{
+// QColor getColor(string color)
+// {
 
-}
+// }
 
-PenStyle getPenStyle(string style)
-{
+// PenStyle getPenStyle(string style)
+// {
     
-}
+// }
 
-PenCapStyle getPCStyle(string cap)
-{
+// PenCapStyle getPCStyle(string cap)
+// {
 
-}
+// }
 
-PenJoinStyle getPJStyle(string join)
-{
+// PenJoinStyle getPJStyle(string join)
+// {
 
-}
+// }
 
-BrushStyle getBrushStyle(string brush)
-{
+// BrushStyle getBrushStyle(string brush)
+// {
     
-}
+// }
