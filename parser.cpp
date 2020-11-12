@@ -12,46 +12,50 @@ gp::vector<Shape*> ParseFile(int size){
     }
 
     gp::vector<Shape*> rShapes(size);
-    in.ignore('\n');
+//    in.ignore('\n');
 
     while (in){
-        string ignore;
+        string temp;
         int id;
+        
+        in.ignore('\n');
 
         in.ignore(numeric_limits<streamsize>::max(), ':');
         in >> id;
         in.ignore(numeric_limits<streamsize>::max(), ':');
-        in >> ignore;
+        in >> temp;
 
         if (in.eof())
             break;
-// wouldnt a switch be better for this?
-        if (id == 1){
+        
+        switch(id){
+        case 1:
             rShapes.push_back(readLine(in, id));
-        }
-        else if (id == 2){
+            break;
+        case 2:
             rShapes.push_back(readPolyLine(in, id));
-        }
-        else if (id == 3){
+            break;
+        case 3:
             rShapes.push_back(readPolygon(in, id));
-        }
-        else if (id == 4){
+            break;
+        case 4:
             rShapes.push_back(readRectangle(in, id));
-        }
-        else if (id == 5){
+            break;
+        case 5:
             rShapes.push_back(readSquare(in, id));
-        }
-        else if (id == 6){
+            break;
+        case 6:
             rShapes.push_back(readEllipse(in, id));
-        }
-        else if (id == 7){
+            break;
+        case 7:
             rShapes.push_back(readCircle(in, id));
-        }
-        else if (id == 8){
-            rShapes.push_back(readText(in, id));
-        }
-        else{
-            cout << "Error" << endl;
+            break;
+        case 8:
+            rShapes.push_back(ReadText(in, id));
+            break;
+        default:
+            cout << "Error parser.cpp" << endl;
+            break;
         }
     }
 
