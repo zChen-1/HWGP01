@@ -27,11 +27,11 @@ Shape* readRectangle(ifstream &in, int id);
 Shape* readSquare(ifstream &in, int id);
 Shape* readEllipse(ifstream &in, int id);
 Shape* readCircle(ifstream &in, int id);
-Shape* ReadText(ifstream& in,int id);
-QColor getColor(string color);
-PenStyle getPenStyle(string style);
-BrushStyle getBrushStyle(string brush);
-PenJoinStyle getPJStyle(string join);
-PenCapStyle getPCStyle(string cap);
+Shape* readText(ifstream& in,int id);
+// QColor getColor(string color);
+// PenStyle getPenStyle(string style);
+// BrushStyle getBrushStyle(string brush);
+// PenJoinStyle getPJStyle(string join);
+// PenCapStyle getPCStyle(string cap);
 
 #endif // PARSER_H
