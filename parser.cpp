@@ -15,13 +15,13 @@ gp::vector<Shape*> ParseFile(int size){
     in.ignore('\n');
 
     while (in){
-        string temp;
+        string ignore;
         int id;
 
         in.ignore(numeric_limits<streamsize>::max(), ':');
         in >> id;
         in.ignore(numeric_limits<streamsize>::max(), ':');
-        in >> temp;
+        in >> ignore;
 
         if (in.eof())
             break;
