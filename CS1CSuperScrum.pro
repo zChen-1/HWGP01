@@ -18,7 +18,8 @@ HEADERS += \
     contactus.h \
     login.h \
     mainwindow.h \
-    vector.h
+    vector.h \
+    shape.h
 
 FORMS += \
     contactus.ui \
