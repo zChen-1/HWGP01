@@ -48,7 +48,7 @@ gp::vector<Shape*> ParseFile(int size){
             rShapes.push_back(readCircle(in, id));
         }
         else if (id == 8){
-            rShapes.push_back(ReadText(in, id));
+            rShapes.push_back(readText(in, id));
         }
         else{
             cout << "Error" << endl;
@@ -106,7 +106,7 @@ Shape* readCircle(ifstream& in, int id)
 }
 
 
-Shape* ReadText(ifstream& in, int id)
+Shape* readText(ifstream& in, int id)
 {
     Text *text = new Text(black, qtColor, SolidLine, FlatCap, MiterJoin, SolidPattern, fontPoint, id, align, fontFamily, fontStyle, fontWeight, textLine, x, y, length, width);
     return text;
