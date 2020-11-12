@@ -46,7 +46,7 @@ private:
     int id;
     ShapeType shape;
     QPen pen;
-    Qbrush brush;
+    QBrush brush;
 
 };
 
