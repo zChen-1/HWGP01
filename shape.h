@@ -18,7 +18,7 @@ class Shape
 public:
     enum class ShapeType { NoShape, Line, Polyline, Polygon, Rectangle, Ellipse, Text };
 
-    Shape(qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, id);
+    Shape(Qt::GlobalColor, qtQt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle, Qt::BrushStyle, int width, int id);
     virtual ~Shape() {}
 
     // add deleted copy operations
@@ -53,7 +53,7 @@ private:
 class Line : public Shape
 {
 public:
-    Line(QPaintDevice* device = nullptr, int id = -1) : Shape{device, id, ShapeType::Line} {}
+    Line(int front, int end) : Shape{device, id, ShapeType::Line}
     ~Line() override { }
     
     void set_points(const QPoint& point_begin, const QPoint& point_end);
