@@ -1,6 +1,6 @@
 // contactUs.cpp by Paul Jo
 
-#include "contactus.h"
+#include "contactUs.h"
 #include "ui_contactus.h"
 
 ContactUs::ContactUs(QWidget *parent) :

@@ -2,8 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "contactus.h"
-#include "login.h"
+#include <QMessageBox>
+#include <QDebug>
+#include "contactUs.h"
+#include "logindialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,9 +24,15 @@ private slots:
 
     void on_actionLogin_triggered();
 
+    void on_actionLog_Out_triggered();
+
+    void loginAdminAccess(bool loginSuccess);
+
 private:
     Ui::MainWindow *ui;
     ContactUs *cWindow;
-    login *lWindow;
+    logindialog *lDialog;
+
+    bool isAdministrator;
 };
 #endif // MAINWINDOW_H

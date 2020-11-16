@@ -10,17 +10,20 @@ CONFIG += c++11
 
 SOURCES += \
     contactus.cpp \
+    logindialog.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     contactus.h \
+    logindialog.h \
     mainwindow.h \
     vector.h \
     shape.h
 
 FORMS += \
     contactus.ui \
+    logindialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.
