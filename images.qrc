@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/new/icons">
+        <file>img/001-add.png</file>
+        <file>img/002-cancel.png</file>
+        <file>img/003-list.png</file>
+        <file>img/004-edit.png</file>
+    </qresource>
+    <qresource prefix="/new/logo">
+        <file>img/team-logo.png</file>
+    </qresource>
+</RCC>
