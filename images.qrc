@@ -8,4 +8,7 @@
     <qresource prefix="/new/logo">
         <file>img/team-logo.png</file>
     </qresource>
+    <qresource prefix="/new/images">
+        <file>img/login message.png</file>
+    </qresource>
 </RCC>
