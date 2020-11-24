@@ -7,6 +7,7 @@
 #include "contactUs.h"
 #include "logindialog.h"
 #include "addshape.h"
+#include "deleteshape.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -38,6 +39,7 @@ private:
     ContactUs *cWindow;
     logindialog *lDialog;
     addShape *addShapeDialog;
+    deleteshape *delShapeDialog;
 
 
     bool isAdministrator;

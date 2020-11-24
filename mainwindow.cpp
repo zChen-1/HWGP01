@@ -75,6 +75,9 @@ void MainWindow::on_actionRemove_Shape_triggered()
     if(!isAdministrator) {
         QMessageBox::information(this, "Error", "You must be logged in to delete shapes.");
     }else {
-        QMessageBox::information(this, "TEMPORARY", "TEMP: USER IS LOGGED IN AND CAN DELETE SHAPES");
+        delShapeDialog = new deleteshape;
+        delShapeDialog->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint & ~Qt::WindowMinMaxButtonsHint);
+        delShapeDialog->exec();
+        delete delShapeDialog;
     }
 }

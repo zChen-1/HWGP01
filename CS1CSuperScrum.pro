@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     addshape.cpp \
     contactus.cpp \
+    deleteshape.cpp \
     logindialog.cpp \
     main.cpp \
     mainwindow.cpp
@@ -18,6 +19,7 @@ SOURCES += \
 HEADERS += \
     addshape.h \
     contactus.h \
+    deleteshape.h \
     logindialog.h \
     mainwindow.h \
     vector.h \
@@ -26,6 +28,7 @@ HEADERS += \
 FORMS += \
     addshape.ui \
     contactus.ui \
+    deleteshape.ui \
     logindialog.ui \
     mainwindow.ui
 

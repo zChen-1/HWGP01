@@ -11,5 +11,6 @@
     <qresource prefix="/new/images">
         <file>img/login message.png</file>
         <file>img/shapedimensionsguide unscaled.png</file>
+        <file>img/areyousure.png</file>
     </qresource>
 </RCC>
