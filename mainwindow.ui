@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>2D Graphics Modeler [Super Scrum]</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -33,7 +33,7 @@
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
-     <string>Help</string>
+     <string>About</string>
     </property>
     <addaction name="actionContact_Us"/>
    </widget>
@@ -41,6 +41,22 @@
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionAdd_Shape"/>
+   <addaction name="actionRemove_Shape"/>
+  </widget>
   <action name="actionLogin">
    <property name="text">
     <string>Log In</string>
@@ -61,7 +77,61 @@
     <string>Quit</string>
    </property>
   </action>
+  <action name="actionAdd_Shape">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/new/icons/img/001-add.png</normaloff>
+     <normalon>img/001-add.png</normalon>:/new/icons/img/001-add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Shape</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Shape</string>
+   </property>
+  </action>
+  <action name="actionRemove_Shape">
+   <property name="icon">
+    <iconset>
+     <normalon>:/new/icons/img/002-cancel.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Remove Shape</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove Shape</string>
+   </property>
+  </action>
+  <action name="actionList_Shapes">
+   <property name="icon">
+    <iconset>
+     <normalon>img/003-list.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>List Shapes</string>
+   </property>
+   <property name="toolTip">
+    <string>List Shapes</string>
+   </property>
+  </action>
+  <action name="actionMove_Shape">
+   <property name="icon">
+    <iconset>
+     <normalon>img/004-edit.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Move Shape</string>
+   </property>
+   <property name="toolTip">
+    <string>Move Shape</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -6,6 +6,7 @@
 #include <QDebug>
 #include "contactUs.h"
 #include "logindialog.h"
+#include "addshape.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,10 +29,16 @@ private slots:
 
     void loginAdminAccess(bool loginSuccess);
 
+    void on_actionAdd_Shape_triggered();
+
+    void on_actionRemove_Shape_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactUs *cWindow;
     logindialog *lDialog;
+    addShape *addShapeDialog;
+
 
     bool isAdministrator;
 };
