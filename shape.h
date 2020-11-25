@@ -18,7 +18,7 @@ class Shape
 public:
     enum class ShapeType { NoShape, Line, Polyline, Polygon, Rectangle, Ellipse, Text };
 
-    Shape(Qt::GlobalColor, qtQt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle, Qt::BrushStyle, int width, int id);
+    Shape(Qt::GlobalColor, Qt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle, Qt::BrushStyle, int width, int id);
     virtual ~Shape() {}
 
     // add deleted copy operations

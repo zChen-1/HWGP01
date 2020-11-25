@@ -15,8 +15,13 @@ public:
     explicit deleteshape(QWidget *parent = nullptr);
     ~deleteshape();
 
+
+private slots:
+    void on_buttonBox_accepted();
+
 private:
     Ui::deleteshape *ui;
+    int confirmation;
 };
 
 #endif // DELETESHAPE_H

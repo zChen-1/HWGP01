@@ -7,8 +7,13 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-     isAdministrator = true;
-    //isAdministrator = false;
+    // initialize pointer members to nullptr
+    cWindow = nullptr;
+    lDialog = nullptr;
+    addShapeDialog = nullptr;
+    delShapeDialog = nullptr;
+
+    isAdministrator = false;
     ui->setupUi(this);
 }
 
@@ -16,9 +21,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
     delete cWindow;
-    //delete lDialog;
-
-    delete addShapeDialog;
 }
 
 void MainWindow::on_actionContact_Us_triggered()
