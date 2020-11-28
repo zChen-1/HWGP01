@@ -12,8 +12,14 @@ class deleteshape : public QDialog
     Q_OBJECT
 
 public:
-    explicit deleteshape(QWidget *parent = nullptr);
+    explicit deleteshape(QWidget *parent = nullptr, const int &shapeCountFromMain = 0);
     ~deleteshape();
+
+    /*!
+     * \brief getShapeCount
+     * \return shapeCount
+     */
+    int getShapeCount() {return shapeCount;};
 
 
 private slots:
@@ -21,7 +27,8 @@ private slots:
 
 private:
     Ui::deleteshape *ui;
-    int confirmation;
+
+    int shapeCount; // temp TODO remove
 };
 
 #endif // DELETESHAPE_H

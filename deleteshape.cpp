@@ -3,12 +3,12 @@
 #include <QMessageBox>
 #include <QDebug>
 
-deleteshape::deleteshape(QWidget *parent) :
+deleteshape::deleteshape(QWidget *parent, const int &shapeCountFromMain) :
     QDialog(parent),
-    ui(new Ui::deleteshape)
+    ui(new Ui::deleteshape),
+    shapeCount {shapeCountFromMain}
 {
     ui->setupUi(this);
-    confirmation = 0;
 }
 
 deleteshape::~deleteshape()
@@ -27,14 +27,15 @@ void deleteshape::on_buttonBox_accepted()
 
     switch (choice) {
       case QMessageBox::Save:
-          qDebug() << "DBG: Shape has been deleted.";
-          break;
+        // delete shape from vector
+        shapeCount -= 1;
+        break;
       case QMessageBox::Discard:
-          qDebug() << "DBG: Shape has NOT been deleted.";
-          break;
+        qDebug() << "DBG: Shape has NOT been deleted.";
+        break;
       default:
-          qDebug() << "ERR: Default case in deleteshape::on_buttonBox_accepted";
-          break;
+        qDebug() << "ERR: Default case in deleteshape::on_buttonBox_accepted";
+        break;
     }
 
 }

@@ -9,6 +9,8 @@
 #include "addshape.h"
 #include "deleteshape.h"
 
+#include "vector.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -28,11 +30,11 @@ private slots:
 
     void on_actionLog_Out_triggered();
 
-    void loginAdminAccess(bool loginSuccess);
-
     void on_actionAdd_Shape_triggered();
 
     void on_actionRemove_Shape_triggered();
+
+    void on_actiondebug_shapeCount_triggered();
 
 private:
     Ui::MainWindow *ui;
@@ -41,6 +43,7 @@ private:
     addShape *addShapeDialog;
     deleteshape *delShapeDialog;
 
+    int shapeCount; // DEBUG: placeholder for vector when shape classes are implemented. TODO remove this
 
     bool isAdministrator;
 };

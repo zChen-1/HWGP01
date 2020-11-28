@@ -3,6 +3,10 @@
 #include "contactUs.h"
 #include "logindialog.h"
 
+/*!
+ * \brief MainWindow::MainWindow
+ * \param parent
+ */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -13,16 +17,24 @@ MainWindow::MainWindow(QWidget *parent)
     addShapeDialog = nullptr;
     delShapeDialog = nullptr;
 
-    isAdministrator = false;
+    shapeCount = 0; // DEBUG TODO remove
+
+    isAdministrator = true;
     ui->setupUi(this);
 }
 
+/*!
+ * \brief MainWindow::~MainWindow
+ */
 MainWindow::~MainWindow()
 {
     delete ui;
     delete cWindow;
 }
 
+/*!
+ * \brief MainWindow::on_actionContact_Us_triggered
+ */
 void MainWindow::on_actionContact_Us_triggered()
 {
     // Only create one contact us window per program execution
@@ -35,16 +47,21 @@ void MainWindow::on_actionContact_Us_triggered()
 
 }
 
+/*!
+ * \brief MainWindow::on_actionLogin_triggered
+ */
 void MainWindow::on_actionLogin_triggered()
 {
     lDialog = new logindialog;
     lDialog->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint & ~Qt::WindowMinMaxButtonsHint);
     lDialog->exec();
     isAdministrator = lDialog->getIsLoggedIn();
-    // qDebug() << "isAdministrator: " << isAdministrator;
     delete lDialog;
 }
 
+/*!
+ * \brief MainWindow::on_actionLog_Out_triggered
+ */
 void MainWindow::on_actionLog_Out_triggered()
 {
     if(!isAdministrator) {
@@ -55,31 +72,44 @@ void MainWindow::on_actionLog_Out_triggered()
     }
 }
 
-void MainWindow::loginAdminAccess(bool loginAccess) {
-   isAdministrator = loginAccess;
-}
-
+/*!
+ * \brief MainWindow::on_actionAdd_Shape_triggered
+ */
 void MainWindow::on_actionAdd_Shape_triggered()
 {
     if(!isAdministrator) {
         QMessageBox::information(this, "Error", "You must be logged in to add shapes.");
     }else {
-        //QMessageBox::information(this, "TEMPORARY", "TEMP: USER IS LOGGED IN AND CAN ADD SHAPES");
-        addShapeDialog = new addShape;
+        addShapeDialog = new addShape(this, shapeCount);
         addShapeDialog->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint & ~Qt::WindowMinMaxButtonsHint);
         addShapeDialog->exec();
+        shapeCount = addShapeDialog->getShapeCount();
         delete addShapeDialog;
     }
 }
 
+/*!
+ * \brief MainWindow::on_actionRemove_Shape_triggered
+ */
 void MainWindow::on_actionRemove_Shape_triggered()
 {
     if(!isAdministrator) {
         QMessageBox::information(this, "Error", "You must be logged in to delete shapes.");
     }else {
-        delShapeDialog = new deleteshape;
-        delShapeDialog->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint & ~Qt::WindowMinMaxButtonsHint);
-        delShapeDialog->exec();
-        delete delShapeDialog;
+        if(shapeCount == 0) { // TODO change to vector
+            QMessageBox::information(this, "Error", "There are no shapes to delete.");
+        }else {
+            delShapeDialog = new deleteshape(this, shapeCount);
+            delShapeDialog->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint & ~Qt::WindowMinMaxButtonsHint);
+            delShapeDialog->exec();
+            shapeCount = delShapeDialog->getShapeCount();
+            delete delShapeDialog;
+        }
     }
+}
+
+// !!! TEMPORARY !!!
+void MainWindow::on_actiondebug_shapeCount_triggered()
+{
+    qDebug() << "shapeCount in mainWindow: " << shapeCount;
 }
