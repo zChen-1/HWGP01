@@ -18,6 +18,7 @@ public:
 
     void initInput();
     int getShapeCount() const;
+    void addShapeToCanvas();
 
     ~addShape();
 

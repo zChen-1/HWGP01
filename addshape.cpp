@@ -49,13 +49,47 @@ void addShape::on_buttonBox_accepted()
     int ret = msgBox.exec();
 
     switch (ret) {
-      case QMessageBox::Save:
+    case QMessageBox::Save:
+        addShapeToCanvas(); // extract input data and add it to shape vector
         shapeCount++; // DEBUG: testing only, replace with vector later
         break;
-      case QMessageBox::Discard:
+    case QMessageBox::Discard:
         // Don't add shape
         break;
-      default:
+    default:
+        // should never be reached
+        break;
+    }
+}
+
+/*!
+ * \brief addShape::addShapeToCanvas
+ * adds a shape from input data
+ */
+void addShape::addShapeToCanvas() {
+    switch(ui->shapeTypeComboBox->currentIndex()){
+    case 0:
+        // adding Line
+        break;
+    case 1:
+        // adding polyLine
+        break;
+    case 2:
+        // adding polygon
+        break;
+    case 3:
+        // adding rectangle
+        break;
+    case 4:
+        // adding ellipse
+        break;
+    case 5:
+        // adding circle
+        break;
+    case 6:
+        // adding text;
+        break;
+    default:
         // should never be reached
         break;
     }
