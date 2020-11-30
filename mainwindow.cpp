@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "contactUs.h"
 #include "logindialog.h"
+#include "comments.h"
 
 /*!
  * \brief MainWindow::MainWindow
