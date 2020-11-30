@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     Shape.cpp \
     addshape.cpp \
+    comments.cpp \
     contactus.cpp \
     deleteshape.cpp \
     logindialog.cpp \
@@ -25,6 +26,7 @@ HEADERS += \
     Shape.h \
     Text.h \
     addshape.h \
+    comments.h \
     contactus.h \
     deleteshape.h \
     logindialog.h \
@@ -33,6 +35,7 @@ HEADERS += \
 
 FORMS += \
     addshape.ui \
+    comments.ui \
     contactus.ui \
     deleteshape.ui \
     logindialog.ui \
@@ -52,3 +55,4 @@ DISTFILES += \
 
 RESOURCES += \
     images.qrc
+
