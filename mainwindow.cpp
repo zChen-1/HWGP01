@@ -113,3 +113,11 @@ void MainWindow::on_actiondebug_shapeCount_triggered()
 {
     qDebug() << "shapeCount in mainWindow: " << shapeCount;
 }
+
+void MainWindow::on_actionComments_triggered()
+{
+    commentsDialog = new comments();
+    commentsDialog->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint & ~Qt::WindowMinMaxButtonsHint);
+    commentsDialog->exec();
+    delete commentsDialog;
+}
